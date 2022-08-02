@@ -1,0 +1,330 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+/*Шрифты*/
+@font-face {
+  font-family: "Exo 2.0";
+  src: url("../fonts/Exo2.0-Thin.eot");
+  src: local("☺"), url("../fonts/Exo2.0-Thin.woff") format("woff"), url("../fonts/Exo2.0-Thin.ttf") format("truetype"), url("../fonts/Exo2.0-Thin.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/*--------------------*/
+body {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.49)), color-stop(50%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.49))), url("../image/background_body.png");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.49) 100%), url("../image/background_body.png");
+  color: #ffffff;
+}
+
+.viands__title {
+  text-align: center;
+  margin: 47px 40px 23px 0px;
+}
+
+.viands__container {
+  max-width: 1209px;
+  margin: 0 auto;
+}
+
+.viands__assortment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -40px 67px -40px;
+}
+
+.viands__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.333%;
+          flex: 0 1 33.333%;
+  padding: 0px 40px;
+}
+
+.viands__direction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.viands__description {
+  margin-bottom: 67px;
+  padding-top: 15px;
+}
+
+.viands__default {
+  display: none;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  text-shadow: 0px 1px 0px #000000;
+  color: #ffffff;
+}
+
+.viands__buy {
+  font-weight: 700;
+  color: #1698d9;
+  border-bottom: 1px dashed #1698d9;
+}
+
+.viands__point {
+  color: #1698d9;
+}
+
+.viands__ended {
+  display: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  text-align: center;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  text-shadow: 0px 1px 0px #000000;
+  color: #ffff66;
+}
+
+.viands__description.viands__select_active div:first-child {
+  display: block;
+}
+
+.viands__description.viands__ended_active div:first-child {
+  display: block;
+}
+
+.viands__description.viands__default_active div:last-child {
+  display: block;
+}
+
+.title {
+  font-family: "Exo 2.0";
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 100;
+  text-shadow: 0px 1px 0px #000000;
+  color: #ffffff;
+}
+
+:root {
+  --border-item-viands: #1698d9;
+  --circle-background-color: #1698d9;
+}
+
+.item-viands_selected {
+  --border-item-viands: #d91667;
+  --circle-background-color: #d91667;
+}
+
+.item-viands_ended {
+  --border-item-viands: #b2b3b2;
+  --circle-background-color: #dbdbdb;
+  --color-viands-ended: #dbdbdb;
+  --background-item-viands: #f2f2f2;
+}
+
+.item-viands_ended img {
+  opacity: 0.5;
+}
+
+.item-viands {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  --all: 0px;
+  --top-left: 30px;
+  border: 4px solid var(--border-item-viands);
+  background: linear-gradient(135deg, var(--border-item-viands) 0 calc(var(--top-left, var(--all)) + 5px), transparent 0) top left/50% 50%, var(--background-item-viands, white);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  -webkit-mask: linear-gradient(45deg, transparent 0 var(--bottom-left, var(--all)), #fff 0) bottom left, linear-gradient(-45deg, transparent 0 var(--bottom-right, var(--all)), #fff 0) bottom right, linear-gradient(135deg, transparent 0 var(--top-left, var(--all)), #fff 0) top left, linear-gradient(-135deg, transparent 0 var(--top-right, var(--all)), #fff 0) top right;
+          mask: linear-gradient(45deg, transparent 0 var(--bottom-left, var(--all)), #fff 0) bottom left, linear-gradient(-45deg, transparent 0 var(--bottom-right, var(--all)), #fff 0) bottom right, linear-gradient(135deg, transparent 0 var(--top-left, var(--all)), #fff 0) top left, linear-gradient(-135deg, transparent 0 var(--top-right, var(--all)), #fff 0) top right;
+  -webkit-mask-size: 50.5% 50.5%;
+          mask-size: 50.5% 50.5%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  border-radius: 0 10px 10px 10px;
+}
+
+.item-viands__container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: 220px;
+  margin: 0 auto 17px auto;
+  padding: 12px 0px 0px 0px;
+}
+
+.item-viands__abovetitle {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  margin: 0px 0px 15px 0px;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-viands-ended, #666666);
+}
+
+.item-viands__title {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  margin: 0px 0px 4px 0px;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-viands-ended, #000000);
+}
+
+.item-viands__taste {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  margin: 0px 0px 16px 0px;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-viands-ended, #000000);
+}
+
+.item-viands__text {
+  line-height: 16px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: var(--color-viands-ended, #666666);
+  font-weight: 400;
+}
+
+.item-viands__count-portions {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: var(--color-viands-ended, #666666);
+  font-weight: 700;
+}
+
+.item-viands__cat {
+  overflow: hidden;
+  max-width: 315px;
+  max-height: 266px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.item-viands__cat img {
+  margin-left: -30px;
+}
+
+.circle-viands {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+  background-color: var(--circle-background-color);
+  bottom: 15px;
+  right: 15px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.circle-viands__weight {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.circle-viands__measurement-unit {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: #ffffff;
+}

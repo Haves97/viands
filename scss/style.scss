@@ -1,0 +1,219 @@
+// Файл обнуляющих стилей
+@import "_nullstyle";
+@import "_fonts";
+
+body {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.49) 100%),
+        url("../image/background_body.png");
+    color: #ffffff;
+}
+
+.viands {
+    &__title {
+        text-align: center;
+        margin: 47px 40px 23px 0px;
+    }
+
+    &__container {
+        max-width: 1209px;
+        margin: 0 auto;
+    }
+
+    &__assortment {
+        display: flex;
+        margin: 0 -40px 67px -40px;
+    }
+
+    &__column {
+        display: flex;
+        flex: 0 1 33.333%;
+        padding: 0px 40px;
+    }
+    &__direction {
+        display: flex;
+        flex-direction: column;
+    }
+    &__description {
+        margin-bottom: 67px;
+        padding-top: 15px;
+    }
+
+    &__default {
+        display: none;
+        text-align: center;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 400;
+        text-shadow: 0px 1px 0px #000000;
+        color: #ffffff;
+    }
+
+    &__buy {
+        font-weight: 700;
+        color: #1698d9;
+        border-bottom: 1px dashed #1698d9;
+    }
+    &__point {
+        color: #1698d9;
+    }
+    &__ended {
+        display: none;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        text-align: center;
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 400;
+        text-shadow: 0px 1px 0px #000000;
+        color: #ffff66;
+    }
+    &__description.viands__select_active div:first-child {
+        display: block;
+    }
+    &__description.viands__ended_active div:first-child {
+        display: block;
+    }
+    &__description.viands__default_active div:last-child {
+        display: block;
+    }
+}
+.title {
+    font-family: "Exo 2.0";
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 100;
+    text-shadow: 0px 1px 0px #000000;
+    color: #ffffff;
+}
+
+:root {
+    --border-item-viands: #1698d9;
+    --circle-background-color: #1698d9;
+}
+
+.item-viands_selected {
+    --border-item-viands: #d91667;
+    --circle-background-color: #d91667;
+}
+
+.item-viands_ended {
+    --border-item-viands: #b2b3b2;
+    --circle-background-color: #dbdbdb;
+    --color-viands-ended: #dbdbdb;
+    --background-item-viands: #f2f2f2;
+    img {
+        opacity: 0.5;
+    }
+}
+
+.item-viands {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    // margin-bottom: 15px;
+
+    --all: 0px;
+    --top-left: 30px;
+
+    border: 4px solid var(--border-item-viands);
+    background: linear-gradient(
+                135deg,
+                var(--border-item-viands) 0 calc(var(--top-left, var(--all)) + 5px),
+                transparent 0
+            )
+            top left / 50% 50%,
+        var(--background-item-viands, white);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    mask: linear-gradient(45deg, transparent 0 var(--bottom-left, var(--all)), #fff 0) bottom left,
+        linear-gradient(-45deg, transparent 0 var(--bottom-right, var(--all)), #fff 0) bottom right,
+        linear-gradient(135deg, transparent 0 var(--top-left, var(--all)), #fff 0) top left,
+        linear-gradient(-135deg, transparent 0 var(--top-right, var(--all)), #fff 0) top right;
+    mask-size: 50.5% 50.5%;
+    mask-repeat: no-repeat;
+    border-radius: 0 10px 10px 10px;
+
+    &__container {
+        flex: 1 1 auto;
+        max-width: 220px;
+        margin: 0 auto 17px auto;
+        padding: 12px 0px 0px 0px;
+    }
+
+    &__abovetitle {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        margin: 0px 0px 15px 0px;
+        line-height: 1.2;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--color-viands-ended, #666666);
+    }
+
+    &__title {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        margin: 0px 0px 4px 0px;
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--color-viands-ended, #000000);
+    }
+
+    &__taste {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        margin: 0px 0px 16px 0px;
+        font-size: 24px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: var(--color-viands-ended, #000000);
+    }
+
+    &__text {
+        line-height: 16px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        color: var(--color-viands-ended, #666666);
+        font-weight: 400;
+    }
+
+    &__count-portions {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        color: var(--color-viands-ended, #666666);
+        font-weight: 700;
+    }
+
+    &__cat {
+        overflow: hidden;
+        max-width: 315px;
+        max-height: 266px;
+        border-radius: 5px;
+        img {
+            margin-left: -30px;
+        }
+        position: relative;
+    }
+}
+
+.circle-viands {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 81px;
+    height: 81px;
+    border-radius: 50%;
+    background-color: var(--circle-background-color);
+    bottom: 15px;
+    right: 15px;
+    justify-content: center;
+    align-items: center;
+    &__weight {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        font-size: 42px;
+        font-weight: 400;
+        color: #ffffff;
+    }
+    &__measurement-unit {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        font-size: 21px;
+        font-weight: 400;
+        color: #ffffff;
+    }
+}
